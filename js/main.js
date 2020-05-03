@@ -24,7 +24,7 @@ const month = new Array(12);
   month[10]="ноября";
   month[11]="декабря";
 
-const num2str = (n, text_forms) => {  
+const numString = (n, text_forms) => {  
   n = Math.abs(n) % 100; var n1 = n % 10;
   if (n > 10 && n < 20) { return text_forms[2]; }
   if (n1 > 1 && n1 < 5) { return text_forms[1]; }
@@ -33,12 +33,12 @@ const num2str = (n, text_forms) => {
 };
 
 
-const declOfNum = (number, titles) => {  
+const deskOfNum = (number, titles) => {  
  const cases = [2, 0, 1, 1, 1, 2];  
   return titles[ (number%100>4 && number%100<20)? 2 : cases[(number%10<5)?number%10:5] ];  
 };
 
-console.log(`Сегодня ${weekday[date.getDay()]}, ${date.getDate()} ${month[date.getMonth()]} ${date.getFullYear()} года, ${date.getHours()} ${declOfNum(date.getHours(), ['час', 'часа', 'часов'])} ${date.getMinutes()} минут ${date.getSeconds()} секунды`);
+console.log(`Сегодня ${weekday[date.getDay()]}, ${date.getDate()} ${month[date.getMonth()]} ${date.getFullYear()} года, ${date.getHours()} ${deskOfNum(date.getHours(), ['час', 'часа', 'часов'])} ${date.getMinutes()} минут ${date.getSeconds()} секунды`);
 
 
 const format = (data) => {
